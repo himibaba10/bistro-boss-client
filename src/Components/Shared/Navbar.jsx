@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
 import { PiUserCircle } from "react-icons/pi";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [lessPadding, setLessPadding] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 400) {
+        setLessPadding(true);
+      } else {
+        setLessPadding(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const navItems = (
     <>
       <li className="hover:text-[#EEFF25] transition duration-300">
@@ -21,7 +36,7 @@ const Navbar = () => {
         <Link to="/dashboard">Our Shop</Link>
       </li>
       <li className="bg-green-600 rounded-full cursor-pointer relative self-start">
-        <BsCart2 className="text-4xl text-white p-2" />
+        <BsCart2 className="text-4xl p-2" />
         <div className="absolute -top-1 -right-1 badge h-[17px] aspect-square badge-secondary badge-xs p-0">
           <span className="text-[10px]">1</span>
         </div>
@@ -35,7 +50,11 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar px-2.5 md:px-5 lg:px-10 py-5">
+    <div
+      className={`navbar px-2.5 md:px-5 lg:px-10 ${
+        lessPadding ? "py-3" : "py-10"
+      } transition-all duration-300 fixed top-0 left-0 z-10 bg-[rgba(21,21,21,0.50)] text-white`}
+    >
       <div className="navbar-start w-full lg:w-1/4 flex-row-reverse lg:flex-row justify-between lg:justify-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
