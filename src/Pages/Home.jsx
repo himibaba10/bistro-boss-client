@@ -1,13 +1,18 @@
-import Banner from "../Components/Home/Banner";
+import { Helmet } from "react-helmet-async";
+import BannerSlider from "../Components/Home/BannerSlider";
 import Categories from "../Components/Home/Categories";
 import ChefRecommmend from "../Components/Home/ChefRecommmend";
+import Testimonials from "../Components/Home/Testimonials";
 import TopFoodBanner from "../Components/Home/TopFoodBanner";
 import FeatureCard from "../Components/Shared/FeatureCard";
 import bgImage from "../assets/home/chef-service.jpg";
 
 const Home = () => (
-  <div>
-    <Banner />
+  <main>
+    <Helmet>
+      <title>Home | Bistro Boss Restaurant</title>
+    </Helmet>
+    <BannerSlider />
     <Categories />
     <div className="section">
       <FeatureCard
@@ -25,7 +30,8 @@ const Home = () => (
       <ChefRecommmend />
     </div>
     <TopFoodBanner />
-  </div>
+    <Testimonials />
+  </main>
 );
 
 export default Home;

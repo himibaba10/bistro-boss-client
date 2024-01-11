@@ -7,7 +7,7 @@ import banner4 from "../../assets/home/04.jpg";
 import banner5 from "../../assets/home/05.png";
 import banner6 from "../../assets/home/06.png";
 
-const Banner = () => {
+const BannerSlider = () => {
   return (
     <Carousel showStatus={false} className="text-center">
       <div>
@@ -32,4 +32,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default BannerSlider;

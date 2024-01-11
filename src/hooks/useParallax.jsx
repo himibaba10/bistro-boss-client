@@ -13,7 +13,7 @@ const useParallax = (backgroundSize) => {
     window.addEventListener("scroll", handleParallax);
 
     return () => window.removeEventListener("scroll", handleParallax);
-  }, []);
+  }, [backgroundSize]);
 
   return [parallaxRef];
 };

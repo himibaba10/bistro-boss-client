@@ -5,6 +5,7 @@ import Foods from "./Foods";
 import useParallax from "../../hooks/useParallax";
 
 const FeatureCard = ({
+  styles,
   bgImage,
   title,
   description,
@@ -18,7 +19,7 @@ const FeatureCard = ({
     <section className="my-20">
       <div
         ref={parallaxRef}
-        className="p-28 mb-24"
+        className={`p-28 mb-24 ${styles}`}
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div
@@ -29,8 +30,12 @@ const FeatureCard = ({
           <p className="leading-7">{description}</p>
         </div>
       </div>
-      <Heading title={headingTitle} subTitle={subheadingTitle} />
-      <Foods category={category} />
+      <div className={`section`}>
+        {headingTitle && (
+          <Heading title={headingTitle} subTitle={subheadingTitle} />
+        )}
+        <Foods category={category} />
+      </div>
     </section>
   );
 };
@@ -43,6 +48,7 @@ FeatureCard.propTypes = {
   category: PropTypes.string,
   headingTitle: PropTypes.string,
   subheadingTitle: PropTypes.string,
+  styles: PropTypes.string,
 };
 
 export default FeatureCard;

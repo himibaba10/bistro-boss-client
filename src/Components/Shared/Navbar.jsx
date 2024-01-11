@@ -30,10 +30,10 @@ const Navbar = () => {
         <Link to="/dashboard">Dashboard</Link>
       </li>
       <li className="hover:text-[#EEFF25] transition duration-300">
-        <Link to="/dashboard">Our Menu</Link>
+        <Link to="/menu">Our Menu</Link>
       </li>
       <li className="hover:text-[#EEFF25] transition duration-300">
-        <Link to="/dashboard">Our Shop</Link>
+        <Link to="/shop">Our Shop</Link>
       </li>
       <li className="bg-green-600 rounded-full cursor-pointer relative self-start">
         <BsCart2 className="text-4xl p-2" />
@@ -87,7 +87,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-end lg:w-3/4 hidden lg:flex">
-        <ul className="gap-4 menu-horizontal items-center text-xl font-extrabold uppercase">
+        <ul className="gap-6 menu-horizontal items-center text-xl font-extrabold uppercase">
           {navItems}
         </ul>
       </div>

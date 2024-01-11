@@ -4,7 +4,6 @@ import Heading from "../Shared/Heading";
 
 const ChefRecommmend = () => {
   const { foods } = useFood("offered");
-  console.log(foods);
   return (
     <div className="my-20">
       <Heading title="CHEF RECOMMENDS" subTitle="Should Try" />
