@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import Heading from "./Heading";
 import Foods from "./Foods";
+import useParallax from "../../hooks/useParallax";
 
 const FeatureCard = ({
   bgImage,
@@ -12,20 +13,7 @@ const FeatureCard = ({
   bgColor = "rgba(21, 21, 21, 0.60)",
   category = "",
 }) => {
-  const parallaxRef = useRef(null);
-
-  useEffect(() => {
-    const handleParallax = () => {
-      parallaxRef.current.style.backgroundPositionY = `${
-        window.scrollY * 0.2 - 350
-      }px`;
-    };
-
-    window.addEventListener("scroll", handleParallax);
-
-    return () => window.removeEventListener("scroll", handleParallax);
-  }, []);
-
+  const [parallaxRef] = useParallax(0.2);
   return (
     <section className="my-20">
       <div

@@ -1,6 +1,7 @@
 import Banner from "../Components/Home/Banner";
 import Categories from "../Components/Home/Categories";
 import ChefRecommmend from "../Components/Home/ChefRecommmend";
+import TopFoodBanner from "../Components/Home/TopFoodBanner";
 import FeatureCard from "../Components/Shared/FeatureCard";
 import bgImage from "../assets/home/chef-service.jpg";
 
@@ -23,6 +24,7 @@ const Home = () => (
       </div>
       <ChefRecommmend />
     </div>
+    <TopFoodBanner />
   </div>
 );
 
